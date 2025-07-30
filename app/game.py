@@ -32,5 +32,6 @@ grid_init = grid_solution.copy()
 grid_init.values[i, j]=0
 
 #iniciando o jogo
-print('JOGO DE SUDOKU')
-print(show_grid(grid_init))
+if __name__=='__main__':
+    print('JOGO DE SUDOKU')
+    print(show_grid(grid_init))
