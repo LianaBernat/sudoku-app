@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 
 
+
 #Primeiro versão usando um grid fixo
 #grid solução fixo
 grid_solution = pd.DataFrame([
@@ -22,8 +23,7 @@ grid_solution = pd.DataFrame([
 
 #montando um grid inicial com base na solução fixa
 #substituindo algumas linhas e colunas por zero
-
-percent_null= 0.3
+percent_null= 0.4
 sort_nulls = np.random.choice(81, int(percent_null*81), replace=False)
 i =[int(d/9)  for d in sort_nulls]
 j = [d%9 for d in sort_nulls]
@@ -33,5 +33,46 @@ grid_init.values[i, j]=0
 
 #iniciando o jogo
 if __name__=='__main__':
-    print('JOGO DE SUDOKU')
+    print()
+    print('🤔 SUDOKU GAME')
+    print('Welcome!')
+    print('Choose a row, a column and a number from 1 to 9.')
+    print("To exit, press 'q' instead of a row or column number.")
+
+
+    while (grid_init==0).sum().sum()>0:
+        print(show_grid(grid_init))
+
+        l=input('Choose row (1-9): ')
+        if l=='q':
+            exit()
+        c=input('Choose column (1-9): ')
+        if c=='q':
+            exit()
+
+        try:
+            l= int(l)-1
+            c=int(c)-1
+            if grid_init.iloc[l,c]!=0:
+                print()
+                print("⚠️  Position is already fulfilled")
+
+            else:
+                n=input('Choose number (1-9): ')
+                if n=='q':
+                    exit()
+                n=int(n)
+                if grid_solution.iloc[l,c]==n:
+                    grid_init.iloc[l,c]=n
+                    print()
+                    print('✅ Good Move. Continue!')
+                else:
+                    print()
+                    print("❌ That's not correct. Try again!")
+
+        except:
+            print()
+            print('❌ invalid row, column or number to fulfill. Use 1-9.')
+
     print(show_grid(grid_init))
+    print( '🎉 Congratulations! You Win!')
