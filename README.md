@@ -1,27 +1,27 @@
 # Sudoku Game (Python CLI)
 
-## 📌 Descrição
-Um jogo de Sudoku desenvolvido em **Python**, jogado diretamente no **terminal**.
-O objetivo é preencher a grade 9x9 com números de 1 a 9, seguindo as regras do Sudoku.
+## 📌 Description
+A Sudoku game developed in **Python** to be played directly at the **terminal**.
+I developed this game to learn more about Numpy and Pandas.
 
-## 🛠 Tecnologias utilizadas
+## 🛠 Technologies
 - Python 3.x
 - Pandas
 - NumPy
 
-## 🎮 Funcionalidades
-✔ Exibição do tabuleiro no terminal
-✔ Validação das jogadas (linha, coluna e bloco 3x3)
-✔ Opção para sair do jogo a qualquer momento (`q`)
-✔ Mensagens claras para acertos, erros e posições inválidas
-✔ Geração inicial do tabuleiro com posições ocultas
+## 🎮 Features
+✔ Board display at the terminal
+✔ Board initial display with hidden positions
+✔ Moves Validation (line, column and 3x3 block)
+✔ Clear messages for hits,erros and invalid positions
+✔ Option to quit the game at any time (`q`)
 
-*(Em desenvolvimento)*
-🔄 Aleatorização do grid inicial
-🏆 Níveis de dificuldade
+*(In development)*
+🔄 Randomization of the initial grid
+🏆 Dificculty level
 
-## ▶ Como jogar
-1. Clone este repositório:
+## ▶ How to play
+1. Clone this repository:
    ```bash
    git clone git@github.com:LianaBernat/sudoku-app.git
    cd sudoku-app
