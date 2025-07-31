@@ -1,6 +1,7 @@
 #Função que monta o tabuleiro
 import numpy as np
 import pandas as pd
+import os
 
 def show_grid(grid_df):
     grid='\n'
@@ -11,5 +12,13 @@ def show_grid(grid_df):
         grid+= a + ' | ' + b + ' | '+ c + '\n'
         if index==2 or index==5:
             grid+= '-'*21+'\n'
-    
+
     return grid.replace('0','.')
+
+def show_move_results(message):
+    os.system('clear')
+    print()
+    print(message)
+
+def sudoku_grid_generator():
+    pass

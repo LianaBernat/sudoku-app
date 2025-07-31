@@ -1,5 +1,6 @@
 
 from sudoku import show_grid
+from sudoku import show_move_results
 import pandas as pd
 import numpy as np
 
@@ -23,7 +24,7 @@ grid_solution = pd.DataFrame([
 
 #montando um grid inicial com base na solução fixa
 #substituindo algumas linhas e colunas por zero
-percent_null= 0.4
+percent_null= 0.1
 sort_nulls = np.random.choice(81, int(percent_null*81), replace=False)
 i =[int(d/9)  for d in sort_nulls]
 j = [d%9 for d in sort_nulls]
@@ -54,25 +55,19 @@ if __name__=='__main__':
             l= int(l)-1
             c=int(c)-1
             if grid_init.iloc[l,c]!=0:
-                print()
-                print("⚠️  Position is already fulfilled")
+                show_move_results("⚠️  Position is already fulfilled")
 
             else:
-                n=input('Choose number (1-9): ')
-                if n=='q':
-                    exit()
-                n=int(n)
+                n=int(input('Choose number (1-9): '))
                 if grid_solution.iloc[l,c]==n:
                     grid_init.iloc[l,c]=n
-                    print()
-                    print('✅ Good Move. Continue!')
+                    show_move_results('✅ Good Move. Continue!')
                 else:
-                    print()
-                    print("❌ That's not correct. Try again!")
+                    show_move_results("❌ That's not correct. Try again!")
 
         except:
-            print()
-            print('❌ invalid row, column or number to fulfill. Use 1-9.')
+            show_move_results('❌ invalid row, column or number to fulfill. Use 1-9.')
 
+
+    show_move_results( '🎉 Congratulations! You Won!')
     print(show_grid(grid_init))
-    print( '🎉 Congratulations! You Win!')
