@@ -24,7 +24,7 @@ grid_solution = pd.DataFrame([
 
 #montando um grid inicial com base na solução fixa
 #substituindo algumas linhas e colunas por zero
-percent_null= 0.1
+percent_null= 0.4
 sort_nulls = np.random.choice(81, int(percent_null*81), replace=False)
 i =[int(d/9)  for d in sort_nulls]
 j = [d%9 for d in sort_nulls]
