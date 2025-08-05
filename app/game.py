@@ -1,14 +1,21 @@
 
-from sudoku import show_grid
+'''This module contains functions to handle the Sudoku game logic,
+including grid generation,displaying the grid, and processing user moves.'''
+
 from sudoku import show_move_results
+from sudoku import show_grid
+from sudoku import sudoku_grid_generator
+from sudoku import sudoku_initial_playable_grid
 import pandas as pd
 import numpy as np
 
 
-
-#Primeiro versão usando um grid fixo
-#grid solução fixo
-grid_solution = pd.DataFrame([
+def main():
+    '''Main function to run the Sudoku game.
+    It initializes the game, generates a Sudoku grid,
+    and handles user input for playing the game.
+    '''
+    grid_origin = pd.DataFrame([
     [7,8,4,  1,5,9,  3,2,6],
     [5,3,9,  6,7,2,  8,4,1],
     [6,1,2,  4,3,8,  7,5,9],
@@ -20,35 +27,38 @@ grid_solution = pd.DataFrame([
     [8,7,6,  3,9,4,  2,1,5],
     [2,4,3,  5,6,1,  9,7,8],
     [1,9,5,  2,8,7,  6,3,4]
-])
+    ])
 
-#montando um grid inicial com base na solução fixa
-#substituindo algumas linhas e colunas por zero
-percent_null= 0.4
-sort_nulls = np.random.choice(81, int(percent_null*81), replace=False)
-i =[int(d/9)  for d in sort_nulls]
-j = [d%9 for d in sort_nulls]
+    grid_solution = sudoku_grid_generator(grid_origin)
 
-grid_init = grid_solution.copy()
-grid_init.values[i, j]=0
-
-#iniciando o jogo
-if __name__=='__main__':
     print()
     print('🤔 SUDOKU GAME')
     print('Welcome!')
     print('Choose a row, a column and a number from 1 to 9.')
-    print("To exit, press 'q' instead of a row or column number.")
+    print("To exit, press 'q'")
 
+    print()
+    while True:
+        d_level = input('Choose difficulty level (1, 2, or 3): ').strip().lower()
+
+        if d_level.lower()=='q':
+            exit()
+
+        if str(d_level).isdigit() and int(d_level) in [1,2,3]:
+            d_level = int(d_level)
+            break
+        print('❌ Invalid input. Please choose a difficulty level (1, 2, or 3).')
+
+    grid_init =  sudoku_initial_playable_grid(grid_solution, difficulty_level=d_level)
 
     while (grid_init==0).sum().sum()>0:
         print(show_grid(grid_init))
 
         l=input('Choose row (1-9): ')
-        if l=='q':
+        if l.lower()=='q':
             exit()
         c=input('Choose column (1-9): ')
-        if c=='q':
+        if c.lower()=='q':
             exit()
 
         try:
@@ -71,3 +81,9 @@ if __name__=='__main__':
 
     show_move_results( '🎉 Congratulations! You Won!')
     print(show_grid(grid_init))
+
+
+
+
+if __name__=='__main__':
+    main()
