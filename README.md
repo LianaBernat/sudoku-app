@@ -2,7 +2,7 @@
 
 ## 📌 Description
 How about a fun little game where you don't risk your money? 😲😂
-This is Sudoku game developed in **Python** to be played directly at the **terminal**.
+This is a Sudoku game developed in **Python** to be played directly at the **terminal**.
 I developed this game to learn more about Numpy and Pandas and project structure.
 
 ## 📜 Rules
