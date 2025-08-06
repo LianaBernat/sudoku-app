@@ -1,3 +1,9 @@
+'''
+Sudoku Validator Test
+This module contains tests for the Sudoku validator function.
+It checks if the Sudoku grid is valid according to the rules of Sudoku.
+'''
+
 import pandas as pd
 import unittest
 from app.sudoku import sudoku_grid_generator
@@ -5,6 +11,10 @@ from tests.sudoku_validator import sudoku_validator
 
 class SudokuValidatorTest(unittest.TestCase):
     def test_grid_origin(self):
+        '''
+        Test the original Sudoku grid.
+        It checks if the original grid is valid according to Sudoku rules.
+        '''
         grid_origin = pd.DataFrame([
             [7,8,4,  1,5,9,  3,2,6],
             [5,3,9,  6,7,2,  8,4,1],
@@ -23,6 +33,10 @@ class SudokuValidatorTest(unittest.TestCase):
         self.assertTrue(solver)
 
     def test_grid_generated(self):
+        '''
+        Test the function used to generated a random Sudoku grid.
+        It checks if one generated grid is valid according to Sudoku rules.
+        '''
         grid_origin = pd.DataFrame([
             [7,8,4,  1,5,9,  3,2,6],
             [5,3,9,  6,7,2,  8,4,1],
@@ -43,6 +57,10 @@ class SudokuValidatorTest(unittest.TestCase):
 
 
     def test_invalid_grid(self):
+        '''
+        Test an invalid Sudoku grid.
+        It checks if the validator correctly identifies an invalid grid.
+        '''
         grid_invalid = pd.DataFrame([
             [7,8,5,  1,5,9,  3,2,6],
             [5,3,9,  6,7,2,  8,4,1],

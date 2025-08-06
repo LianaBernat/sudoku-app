@@ -31,7 +31,8 @@ At the beginnig, you can choose the difficulty level:
 ✔ Clear messages for hits,erros and invalid positions\
 ✔ Option to quit the game at any time (`q`)\
 ✔ Randomization of the initial board to play the game.\
-✔ 3 Difficulty levels
+✔ 3 Difficulty levels.\
+✔ A test module to validate whether the game's grids are valid Sudoku boards.
 
 ## ▶ How to play
 1. Clone this repository:

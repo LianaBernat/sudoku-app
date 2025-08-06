@@ -1,3 +1,9 @@
+'''
+Sudoku Validator Module
+This module contains the function to validate a Sudoku grid that will be used in the tests.
+It checks if the Sudoku grid is valid according to the rules of Sudoku.
+'''
+
 import pandas as pd
 
 def sudoku_validator(grid):
