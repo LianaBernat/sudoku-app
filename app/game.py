@@ -1,11 +1,17 @@
 
-'''This module contains functions to handle the Sudoku game logic,
-including grid generation,displaying the grid, and processing user moves.'''
+'''
+app/game.py
+Sudoku Game
+Main script to run the Sudoku game.
+Run this script from the root folder using:
+    python -m app.game
+'''
 
-from sudoku import show_move_results
-from sudoku import show_grid
-from sudoku import sudoku_grid_generator
-from sudoku import sudoku_initial_playable_grid
+from app.sudoku import (
+    show_move_results,
+    show_grid,
+    sudoku_grid_generator,
+    sudoku_initial_playable_grid)
 import pandas as pd
 import numpy as np
 
@@ -81,7 +87,6 @@ def main():
 
     show_move_results( '🎉 Congratulations! You Won!')
     print(show_grid(grid_init))
-
 
 
 
