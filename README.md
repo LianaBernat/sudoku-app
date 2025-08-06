@@ -2,8 +2,9 @@
 
 ## 📌 Description
 How about a fun little game where you don't risk your money? 😲😂
-This is a Sudoku game developed in **Python** to be played directly at the **terminal**.
-I developed this game to learn more about Numpy and Pandas and project structure.
+This is a Sudoku game developed in **Python** to be played directly at the **terminal**.\
+
+I developed this game to learn more about Numpy, Pandas and project structure.
 
 ## 📜 Rules
 1. Each row must contain the numbers 1-9 exactly once.
@@ -24,12 +25,12 @@ At the beginnig, you can choose the difficulty level:
 - NumPy
 
 ## 🎮 Features
-✔ Board display at the terminal
-✔ Board initial display with hidden positions
-✔ Moves Validation (line, column and 3x3 block)
-✔ Clear messages for hits,erros and invalid positions
-✔ Option to quit the game at any time (`q`)
-✔ Randomization of the initial board to play the game.
+✔ Board display at the terminal\
+✔ Board initial display with hidden positions\
+✔ Moves Validation (line, column and 3x3 block)\
+✔ Clear messages for hits,erros and invalid positions\
+✔ Option to quit the game at any time (`q`)\
+✔ Randomization of the initial board to play the game.\
 ✔ 3 Difficulty levels
 
 ## ▶ How to play
